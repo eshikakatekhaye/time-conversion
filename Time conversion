@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+class time
+{
+    private:
+        int h; int m; int s;
+        public:
+        entertime();
+        displaytime();
+        conversionintoseconds();
+
+};
+time:: entertime()
+{
+    cout<<"Enter time: ";
+    cout<<"\nHours? :";
+    cin>>h;
+    cout<<"\nMinutes? :";
+    cin>>m;
+    cout<<"\nSeconds? :";
+    cin>>s;
+}
+time:: displaytime()
+{
+    if(h<=9 && m<=9 && s <=9)
+   cout<<"The time is : 0"<<h<<":0"<<m<<":0"<<s;
+   else if(h<=9 && m<=9 && s>9)
+   cout<<"The time is : 0"<<h<<":0"<<m<<":"<<s;
+   else if(h<=9 && m>9 && s<=9)
+   cout<<"The time is : 0"<<h<<":"<<m<<":0"<<s;
+   else if(h>9 && m<=9 && s <=9)
+   cout<<"The time is : "<<h<<":0"<<m<<":0"<<s;
+   else if(h<=9 && m>9 && s>9)
+   cout<<"The time is : 0"<<h<<":"<<m<<":"<<s;
+   else if(h>9 && m>9 && s<=9)
+   cout<<"The time is : "<<h<<":"<<m<<":0"<<s;
+   else if(h>9 && m<=9 && s>9)
+   cout<<"The time is : "<<h<<":0"<<m<<":"<<s;
+   else
+   cout<<"The time is : "<<h<<":"<<m<<":"<<s;
+}
+time:: conversionintoseconds()
+{
+    int seconds=3600*h+60*m+s;
+    cout<<"\nThe time in seconds is: "<<seconds;
+}
+main()
+{
+    time t;
+    t.entertime();
+     t.displaytime();
+    t.conversionintoseconds();
+    return 0;
+}
